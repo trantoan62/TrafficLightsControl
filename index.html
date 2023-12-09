@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <title>Traffic light control</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class= "background-image">
+        <h1 style="padding:1.2rem; color: pink; background-color: rgba(255, 255, 255, 0.1); text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">
+            <b>Traffic lights control</b></h1>
+        <br>
+        <div class = "chinhsuamode">
+            <p style="color: #2196F3; background-color: #fff; display: inline-block; border-radius: 34px; width: 80px; height: 34px; text-align:center; padding:0.2rem"><b>
+                Manual</b></p>
+            <label class="switch">
+                <input type="checkbox" id ="mode" name = "mode" onclick = "func();" checked>
+                <span class="slider round"></span>
+            </label>
+            <p style="color: #2196F3; background-color: #fff; display: inline-block; border-radius: 34px; width: 60px; height: 34px; text-align:center; padding:0.2rem"><b>
+                Auto</b></p>
+        </div>
+        <div class="box-container">
+            <div class="box1" id = "box1">
+                <p></p>
+                <h5>Auto mode</h5>
+                <p></p>
+                <div class = "smallbox">
+                    <p>Traffic light 1</p>
+                    <div class="buttons_added">
+                        <span class="dendo"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="red1" type="number" value="12" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denvang"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="yellow1" type="number" value="5" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denxanh"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="green1" type="number" value="6" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                </div>
+                <div class = "smallbox">
+                    <p>Traffic light 2</p>
+                    <div class="buttons_added">
+                        <span class="dendo"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="red2" type="number" value="21" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denvang"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="yellow2" type="number" value="7" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denxanh"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="green2" type="number" value="13" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                </div>
+                <div class = "smallbox">
+                    <p>Traffic light 3</p>
+                    <div class="buttons_added">
+                        <span class="dendo"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="red3" type="number" value="32" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denvang"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="yellow3" type="number" value="6" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                    <div class="buttons_added">
+                        <span class="denxanh"></span> &nbsp;
+                        <input aria-label="quantity" class="input-qty" max="300" min="1" name="green3" type="number" value="25" onkeydown="return event.keyCode !== 69">
+                    </div> <br>
+                </div>    
+            </div>
+            <div class="box3">
+                <p></p>
+                <h5>Result</h5>
+                <p></p>
+                <div class = "smallbox">
+                    <p>Traffic light 1</p>
+                    <div class="rectangle"></div>
+                    <div class="square"></div>
+                    <span id = "den1do" class="dentat"></span>
+                    <span id = "den1vang" class="dentat"></span>
+                    <span id = "den1xanh" class="dentat"></span><br>
+                    <b><p id="result1" style="font-family: 'Seven Segment', sans-serif; font-size: 50px; position:relative; z-index: 1; color: red;"></p></b>
+                </div>
+                <div class = "smallbox">
+                    <p>Traffic light 2</p>
+                    <div class="rectangle"></div>
+                    <div class="square"></div>
+                    <span id = "den2do" class="dentat"></span>
+                    <span id = "den2vang" class="dentat"></span>
+                    <span id = "den2xanh" class="dentat"></span><br>
+                    <b><p id="result2" style="font-family: 'Seven Segment', sans-serif; font-size: 50px; position:relative; z-index: 1; color: red;"></p></b>
+                </div>
+                <div class = "smallbox">
+                    <p>Traffic light 3</p>
+                    <div class="rectangle"></div>
+                    <div class="square"></div>
+                    <span id = "den3do" class="dentat"></span>
+                    <span id = "den3vang" class="dentat"></span>
+                    <span id = "den3xanh" class="dentat"></span><br>
+                    <b><p id="result3" style="font-family: 'Seven Segment', sans-serif; font-size: 50px; position:relative; z-index: 1; color: red;"></p></b>
+                </div>   
+            </div>
+        </div>
+        <button onclick="func2();" style="color: #f32121; background-color: #fff; display: inline-block; border-radius: 50px; width: 130px; height: 50px; text-align:center; padding:0.2rem; font-size: 26px; position:relative; right:4.4rem; bottom: 0.5rem;"><b>
+            Confirm</b></button><br>
+        <div class="box2" id = "box2">
+            <p></p>
+            <h5>Manual mode</h5>
+            <p></p>
+            <div class = "smallbox">
+                <p>Traffic light 1</p>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Red</p>
+                    <input type="radio" name="light1" id="red1" value="red">
+                    <span class="checkmark1"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Yellow</p>
+                    <input type="radio" name="light1" id="yellow1" value="yellow" checked="checked">
+                    <span class="checkmark2"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Green</p>
+                    <input type="radio" name="light1" id="green1" value="green">
+                    <span class="checkmark3"></span>
+                </label>
+            </div>
+            <div class = "smallbox">
+                <p>Traffic light 2</p>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Red</p>
+                    <input type="radio" name="light2" id="red2" value="red">
+                    <span class="checkmark1"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Yellow</p>
+                    <input type="radio" name="light2" id="yellow2" value="yellow" checked="checked">
+                    <span class="checkmark2"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Green</p>
+                    <input type="radio" name="light2" id="green2" value="green">
+                    <span class="checkmark3"></span>
+                </label>
+            </div>
+            <div class = "smallbox">
+                <p>Traffic light 3</p>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Red</p>
+                    <input type="radio" name="light3" id="red3" value="red">
+                    <span class="checkmark1"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Yellow</p>
+                    <input type="radio" name="light3" id="yellow3" value="yellow" checked="checked">
+                    <span class="checkmark2"></span>
+                </label>
+                <label class="container">
+                    <p style = "text-align: left; font-size:1rem; padding-left: 15px;">Green</p>
+                    <input type="radio" name="light3" id="green3" value="green">
+                    <span class="checkmark3"></span>
+                </label>
+            </div>
+        </div>
+        <b><footer style="color: pink; text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;">   
+            <br><p style="text-align: left; padding-left: 13rem;">Written by: </p>
+            <a style="color:rgb(255, 20, 20);" href="https://www.facebook.com/toanbanxoi/">Tran Quoc Toan - 19146090</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a style="color:yellow;" href="https://www.facebook.com/hoang.hoa.52831666">Le Hoang Hoa - 19146122</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a style="color:rgb(34, 248, 34);" href="https://www.facebook.com/profile.php?id=100010132369077">Pham Tu Nhi - 19146102</a>.
+        </footer></b>
+    </div>
+
+
+    <script src = "js/script.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        setInterval(function(){
+            $.ajax({
+                url: "addData.php",
+                method: "POST",
+                data: {outputmode: outputmode,
+                trangthaiden1: trangthaiden1, trangthaiden2: trangthaiden2, trangthaiden3: trangthaiden3,
+                timeleft1: timeleft1, timeleft2: timeleft2, timeleft3: timeleft3,
+                stt1r:stt1[0], stt1y:stt1[2], stt1g: stt1[1],
+                stt2r:stt2[0], stt2y:stt2[2], stt2g: stt2[1],
+                stt3r:stt3[0], stt3y:stt3[2], stt3g: stt3[1]}
+            });
+        },1000);
+    </script>
+    </body>
+</html>
