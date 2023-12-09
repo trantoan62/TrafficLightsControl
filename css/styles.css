@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/seven-segment');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.box-container{
+    padding:1rem 3%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap:1.5rem;
+}
+.box1{
+    padding:1.2rem;
+    background:rgba(255, 255, 255, 0.8);
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 40px 220px;
+    gap:1rem;
+    height: 330px;
+}
+.box2{
+    z-index: -1;
+    padding: 1.2rem;
+    background:rgba(255, 255, 255, 0.8);
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    left: 3%;
+    top: 8.4rem;
+    width: 46.05%;
+    overflow: hidden;
+    text-align: center;
+    --box-shadow: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 40px 220px;
+    gap:1rem;
+    height: 330px;
+}
+.box3{
+    padding:1.2rem;
+    background:rgba(255, 255, 255, 0.8);
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 40px 220px;
+    gap:1rem;
+    height: 330px;
+}
+.smallbox {
+    padding:1rem;
+    background:rgba(255, 255, 255, 0.8);
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+.rectangle {
+    z-index: 0;
+    position: absolute;
+    top: 57px;
+    left: 16.667%;
+    height: 42px;
+    width: 66.666%;
+    background-color: #555;
+    display: inline-block;
+    border-radius: 6px;
+    border-style: solid;
+}
+
+.square {
+    z-index: 0;
+    position: absolute;
+    top: 108px;
+    left: 33.889%;
+    height: 58px;
+    width: 32.222%;
+    background-color: rgb(58, 58, 58);
+    display: inline-block;
+    border-radius: 6px;
+    border-style: solid;
+}
+
+.dendo {
+    position:relative;
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+}
+.denvang {
+    position:relative;
+    height: 30px;
+    width: 30px;
+    background-color: Yellow;
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+}
+.denxanh {
+    position:relative;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(34, 248, 34);
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+}
+.dentat {
+    position:relative;
+    z-index: 2;
+    height: 30px;
+    width: 30px;
+    background-color: #aaa;
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+}
+
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+    padding:0rem 0.6rem;
+    padding-bottom: 0.5rem;
+}
+.input-qty {
+    background-color:#fff;
+    height:1.9rem;
+    width: 4.5rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:2px solid rgb(0, 0, 0);
+    border-bottom:2px solid rgb(0, 0, 0);
+    border-left:2px solid rgb(0, 0, 0);
+    border-right:2px solid rgb(0, 0, 0);
+    padding: 0;
+}
+
+.chinhsuamode{
+    position: absolute;
+    top: 6rem;
+    left: 24.7rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:0.6rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.background-image{
+    width: 100%;
+    height: 100vh;
+    background-image: url("neon-lines.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+  /* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+  /* Create a custom radio button */
+.checkmark1 {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border-style: solid;
+    display: inline-block;
+}
+.checkmark2 {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border-style: solid;
+    display: inline-block;
+}
+.checkmark3 {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border-style: solid;
+    display: inline-block;
+}
+
+.container input:checked ~ .checkmark1 {
+    background-color: red;
+}
+.container input:checked ~ .checkmark2 {
+    background-color: yellow;
+}
+.container input:checked ~ .checkmark3 {
+    background-color: rgb(34, 248, 34);
+}
+
+/*label{
+    font-family: 'LCD', sans-serif;
+    font-family: 'Seven Segment', sans-serif;
+}*/
